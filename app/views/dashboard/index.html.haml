@@ -1,0 +1,8 @@
+= render layout: 'navbar' do
+	%h1 hello, #{@name}. here are your matches:
+	%ul
+		- @matches.each do |match|
+			- if match[:shared] != 0
+				%li #{match[:percent]}%: #{match[:name]} shares #{match[:shared]} answers
+			- else
+				%li #{match[:name]} does not share any questions completed with you. Answer more questions!

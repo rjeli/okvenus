@@ -1,0 +1,13 @@
+%head
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+  %title OkVenus
+
+%body
+  .container
+    .bg-warning
+      = notice
+    .bg-danger
+      = alert
+    = yield

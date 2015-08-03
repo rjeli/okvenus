@@ -1,0 +1,7 @@
+= render layout: 'navbar' do
+	%h1 my answers
+	%ul
+		- @answers.each do |answer|
+			%li
+				%p= Question.find(answer[:question_id]).body
+				%p= answer[:response]

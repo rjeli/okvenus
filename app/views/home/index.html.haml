@@ -1,0 +1,8 @@
+.row
+  .center-block.text-center#greeting 
+    %h1 Welcome to OkVenus!
+  .center-block#sign-up 
+    = link_to 'find your match', new_user_registration_path,
+      class: 'btn btn-primary center-block'
+  .center-block.text-center#subtext
+    = link_to 'i already have an account', new_user_session_path

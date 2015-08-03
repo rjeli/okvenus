@@ -1,0 +1,12 @@
+= render layout: 'navbar' do
+	- if @question
+		%h1=@question.body
+		%br
+		.text-center
+			= simple_form_for @answer do |f|
+				= f.hidden_field :question_id, value: @question.id
+				= f.submit 'yes', class: 'btn btn-lg btn-success'
+				= f.submit 'no', class: 'btn btn-lg btn-danger'
+			= link_to 'new question', answers_path, class: 'btn btn-sm btn-info'
+	- else
+		%h1 You have answered all the questions!

@@ -1,0 +1,15 @@
+%nav.navbar.navbar-default
+	.container-fluid
+		.navbar-header
+			= link_to 'OkVenus', root_path, class: 'navbar-brand'
+		%div
+			%ul.nav.navbar-nav.navbar-left
+				%li= link_to 'Dashboard', root_path
+				%li= link_to 'Answer', answer_path
+				%li= link_to 'My answers', my_answers_path
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to 'Profile', edit_user_registration_path
+				%li= link_to 'Sign out', destroy_user_session_path, method: :delete
+
+.container(style="width: 80%;")
+	= yield
