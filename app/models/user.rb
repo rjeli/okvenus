@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :questions, through: :answers
 
   def get_matches
-    User.all.map do |user|
+    User.where.not(id: self.id).all.map do |user|
       user = UserDecorator.new(user)
       result = {}
       result[:name] = user[:name]
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       end
       result[:shared] = both_have.size
       if both_have.size != 0
-        result[:percent] = same.size / both_have.size * 100
+        result[:percent] = same.size.to_f / both_have.size.to_f * 100
       end
       result
     end
