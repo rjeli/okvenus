@@ -14,11 +14,11 @@ class User < ActiveRecord::Base
       both_have = user.answers.select do |answer| 
         self.answers.map(&:question_id).include? answer.question_id
       end
-      result[:both_have] = both_have
       same = both_have.select do |a|
         self.answers.find_by(question_id: a.question_id).response == a.response
       end
       result[:shared] = both_have.size
+      result[:same] = same.size
       if both_have.size != 0
         result[:percent] = same.size.to_f / both_have.size.to_f * 100
       end

@@ -3,6 +3,6 @@
 	%ul
 		- @matches.each do |match|
 			- if match[:shared] != 0
-				%li #{match[:percent]}%: #{match[:name]} shares #{match[:shared]} answers
+				%li #{match[:percent]}%: #{match[:name]} shares #{match[:same]} answers
 			- else
 				%li #{match[:name]} does not share any questions completed with you. Answer more questions!
