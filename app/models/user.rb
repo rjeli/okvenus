@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   def get_matches
     User.all.map do |user|
-      #user = UserDecorator.new(user)
+      user = UserDecorator.new(user)
       result = {}
       result[:name] = user[:name]
       both_have = user.answers.select do |answer| 
