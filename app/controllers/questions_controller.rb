@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  # Generated scaffolding, to enter questions easily
+
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
