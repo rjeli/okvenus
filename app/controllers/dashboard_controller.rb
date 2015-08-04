@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
 	def index
 		@name = current_user.name
 		@matches = User.all.map do |user|
+			#user = UserDecorator.new(user)
 			result = {}
 			result[:name] = user[:name]
 			both_have = user.answers.select do |answer| 
